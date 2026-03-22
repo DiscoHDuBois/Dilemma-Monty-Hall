@@ -39,15 +39,15 @@ La risposta **controintuitiva** è che conviene sempre cambiare: la probabilità
 
 ```mermaid
 flowchart TD
-    A["Scegli una porta<br>(1/3)"] --> B{"L'auto è<br>nella tua porta?"}
+    A["Scegli una<br>porta(1/3)"] --> B{"L'auto è<br>nella tua porta?"}
 
     B -- "SÌ(1/3)" --> C["Il conduttore apre<br>un'altra porta"]
     B -- "NO(2/3)" --> D["Il conduttore apre<br>l'unica porta"]
 
-    C -- "TIENI → Vinci" --> Z
-    C -- "CAMBI → Perdi" --> Z
-    D -- "TIENI → Perdi" --> W
-    D -- "CAMBI → Vinci" --> W
+    C -- "TIENI→vinci" --> Z
+    C -- "CAMBI→perdi" --> Z
+    D -- "TIENI→perdi" --> W
+    D -- "CAMBI→vinci" --> W
 
     Z["TENGO<br>1/3≈33%"]
     W["CAMBIO<br>2/3≈67%"]
