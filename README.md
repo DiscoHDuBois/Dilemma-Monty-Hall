@@ -39,22 +39,20 @@ La risposta **controintuitiva** è che conviene sempre cambiare: la probabilità
 ## Perché conviene cambiare? La spiegazione visiva
 
 ```mermaid
-flowchart TD
-    A["Porta scelta"] --> B{"Auto dietro?"}
+flowchart LR
+    A[Porta scelta] -->|1/3| B[Auto qui]
+    A -->|2/3| C[Auto altrove]
 
-    B -- "SI 1/3" --> C["Porta-Capra aperta"]
-    B -- "NO 2/3" --> D["Porta-Capra aperta"]
+    B --> D[Tieni: Vinci]
+    B --> E[Cambi: Perdi]
 
-    C --> E["Tieni: Vinci"]
-    C --> F["Cambi: Perdi"]
+    C --> F[Tieni: Perdi]
+    C --> G[Cambi: Vinci]
 
-    D --> G["Tieni: Perdi"]
-    D --> H["Cambi: Vinci"]
-
-    E --> Z["TENGO 33%"]
-    F --> Z
-    G --> W["CAMBIO 67%"]
-    H --> W
+    D --> Z[TENGO 33%]
+    E --> Z
+    F --> W[CAMBIO 67%]
+    G --> W
 
     style W fill:#2d6a4f,color:#fff
     style Z fill:#9b2226,color:#fff
