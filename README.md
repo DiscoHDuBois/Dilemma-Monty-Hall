@@ -41,19 +41,16 @@ La risposta **controintuitiva** è che conviene sempre cambiare: la probabilità
 flowchart TD
     A["Scegli una porta<br>(probabilità 1/3)"] --> B{"L'auto è dietro<br>la tua porta?"}
 
-    B -- "SÌ (1/3)" --> C["Apre un'altra porta<br>con una capra"]
-    B -- "NO (2/3)" --> D["Apre l'unica altra porta<br>con una capra"]
+    B -- "SÌ (1/3)" --> C["Il conduttore apre<br>un'altra porta"]
+    B -- "NO (2/3)" --> D["Il conduttore apre<br>l'unica altra porta"]
 
-    C --> E["TIENI: vinci ✅"]
-    C --> F["CAMBI: perdi ❌"]
+    C -- "TIENI → vinci ✅" --> Z
+    C -- "CAMBI → perdi ❌" --> Z
+    D -- "TIENI → perdi ❌" --> W
+    D -- "CAMBI → vinci ✅" --> W
 
-    D --> G["TIENI: perdi ❌"]
-    D --> H["CAMBI: vinci ✅"]
-
-    E --> Z["TENGO<br>vittoria = 1/3 ≈ 33%"]
-    F --> Z
-    G --> W["CAMBIO<br>vittoria = 2/3 ≈ 67%"]
-    H --> W
+    Z["TENGO<br>1/3 ≈ 33%"]
+    W["CAMBIO<br>2/3 ≈ 67%"]
 
     style W fill:#2d6a4f,color:#fff
     style Z fill:#9b2226,color:#fff
@@ -107,5 +104,4 @@ Cambio: 3361/5015 vittorie (67.02%)
 ```
 
 I risultati confermano empiricamente la teoria: cambiare porta vince circa il **67%** delle volte, tenere solo il **33%**.
-
 
