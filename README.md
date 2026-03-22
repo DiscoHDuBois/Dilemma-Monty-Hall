@@ -24,6 +24,7 @@ python3 montyHall-stats.py 50000
 Il **Problema di Monty Hall** è un celebre rompicapo probabilistico ispirato all'omonimo conduttore del gioco televisivo americano *Let's Make a Deal*.
 
 **La situazione:**
+
 1. Davanti a te ci sono **3 porte**. Dietro a una c'è un'**auto**, dietro alle altre due ci sono delle **capre**.
 2. Scegli una porta.
 3. Il conduttore (che sa dove si trova l'auto) **apre una delle porte rimanenti**, rivelando sempre una capra.
@@ -39,18 +40,21 @@ La risposta **controintuitiva** è che conviene sempre cambiare: la probabilità
 
 ```mermaid
 flowchart TD
-    A["Scegli una<br>porta(1/3)"] --> B{"L'auto è<br>nella tua porta?"}
+    A["Scegli una porta\n(prob. 1/3)"] --> B{"Auto dietro\nla tua porta?"}
 
-    B -- "SÌ(1/3)" --> C["Il conduttore apre<br>un'altra porta"]
-    B -- "NO(2/3)" --> D["Il conduttore apre<br>l'unica porta"]
+    B -- "SI — 1/3" --> C["Apre altra porta\ncon capra"]
+    B -- "NO — 2/3" --> D["Apre unica altra\nporta con capra"]
 
-    C -- "TIENI→vinci" --> Z
-    C -- "CAMBI→perdi" --> Z
-    D -- "TIENI→perdi" --> W
-    D -- "CAMBI→vinci" --> W
+    C --> E["TIENI: vinci"]
+    C --> F["CAMBI: perdi"]
 
-    Z["TENGO<br>1/3≈33%"]
-    W["CAMBIO<br>2/3≈67%"]
+    D --> G["TIENI: perdi"]
+    D --> H["CAMBI: vinci"]
+
+    E --> Z["TENGO\n1/3 = 33%"]
+    F --> Z
+    G --> W["CAMBIO\n2/3 = 67%"]
+    H --> W
 
     style W fill:#2d6a4f,color:#fff
     style Z fill:#9b2226,color:#fff
@@ -67,6 +71,7 @@ flowchart TD
 Permette di giocare una singola partita interattiva direttamente dal terminale.
 
 **Come funziona:**
+
 1. Il programma posiziona l'auto dietro una porta scelta casualmente.
 2. Ti chiede di scegliere una porta (1, 2 o 3).
 3. Rivela una porta con una capra tra quelle che non hai scelto e che non nascondono l'auto.
@@ -74,6 +79,7 @@ Permette di giocare una singola partita interattiva direttamente dal terminale.
 5. Rivela il risultato.
 
 **Esempio di esecuzione:**
+
 ```
 Inserisci un numero da 1 a 3: 1
 Hai scelto la porta: 1
@@ -90,6 +96,7 @@ Hai vinto!
 Simula **10.000 partite** (o un numero personalizzato passato come argomento) assegnando casualmente ad ogni partita la strategia "tengo" o "cambio", e calcola le percentuali di vittoria per ciascuna.
 
 **Come funziona:**
+
 1. Per ogni partita genera casualmente la porta vincente e la scelta iniziale del giocatore.
 2. Simula l'apertura della porta con la capra da parte del conduttore.
 3. Assegna casualmente la strategia (`tengo` o `cambio`).
@@ -97,6 +104,7 @@ Simula **10.000 partite** (o un numero personalizzato passato come argomento) as
 5. Stampa le statistiche finali.
 
 **Esempio di output:**
+
 ```
 Partite totali: 10000
 Tengo:  1673/4985 vittorie (33.56%)
