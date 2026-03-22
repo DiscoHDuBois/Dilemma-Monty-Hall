@@ -39,20 +39,20 @@ La risposta **controintuitiva** è che conviene sempre cambiare: la probabilità
 
 ```mermaid
 flowchart TD
-    A["Scegli una porta (1/3 di probabilità)"] --> B{L'auto è dietro la tua porta?}
+    A["Scegli una porta<br>(probabilità 1/3)"] --> B{"L'auto è dietro<br>la tua porta?"}
 
-    B -- "SI — probabilità 1/3" --> C["Il conduttore apre una delle altre due porte con una capra"]
-    B -- "NO — probabilità 2/3" --> D["Il conduttore apre l'unica altra porta con una capra"]
+    B -- "SÌ (1/3)" --> C["Apre un'altra porta<br>con una capra"]
+    B -- "NO (2/3)" --> D["Apre l'unica altra porta<br>con una capra"]
 
-    C --> E["Se TIENI: vinci ✅"]
-    C --> F["Se CAMBI: perdi ❌"]
+    C --> E["TIENI: vinci ✅"]
+    C --> F["CAMBI: perdi ❌"]
 
-    D --> G["Se TIENI: perdi ❌"]
-    D --> H["Se CAMBI: vinci ✅"]
+    D --> G["TIENI: perdi ❌"]
+    D --> H["CAMBI: vinci ✅"]
 
-    E --> Z["Strategia TENGO:\n probabilità di vittoria = 1/3 ≈ 33%"]
+    E --> Z["TENGO<br>vittoria = 1/3 ≈ 33%"]
     F --> Z
-    G --> W["Strategia CAMBIO:\n probabilità di vittoria = 2/3 ≈ 67%"]
+    G --> W["CAMBIO<br>vittoria = 2/3 ≈ 67%"]
     H --> W
 
     style W fill:#2d6a4f,color:#fff
@@ -107,3 +107,5 @@ Cambio: 3361/5015 vittorie (67.02%)
 ```
 
 I risultati confermano empiricamente la teoria: cambiare porta vince circa il **67%** delle volte, tenere solo il **33%**.
+
+
