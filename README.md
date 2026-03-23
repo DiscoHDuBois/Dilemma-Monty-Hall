@@ -4,7 +4,7 @@
 
 - Python 3.6+
 
-## Esecuzione
+## Esecuzione macOS
 
 ```bash
 # Partita interattiva
@@ -16,7 +16,18 @@ python3 montyHall-stats.py
 # Simulazione con numero di partite personalizzato
 python3 montyHall-stats.py 50000
 ```
+## Esecuzione Arch Linux
 
+```bash
+# Partita interattiva
+python montyHall-interattivo.py
+
+# Simulazione statistica (default: 10.000 partite)
+python montyHall-stats.py
+
+# Simulazione con numero di partite personalizzato
+python montyHall-stats.py 50000
+```
 ---
 
 ## Cos'è il Dilemma di Monty Hall?
